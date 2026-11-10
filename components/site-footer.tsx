@@ -13,7 +13,7 @@ const providers = ['Evolution', 'Pragmatic Play', 'PG Soft', 'JILI', 'Spribe', '
 export function SiteFooter() {
   return (
     <footer className="mt-12 border-t border-border bg-surface">
-      <div className="mx-auto max-w-7xl px-4 py-10 md:px-6">
+      <div className="mx-auto max-w-7xl px-4 py-10 pb-24 md:px-6 md:pb-10">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_2fr]">
           <div className="space-y-4">
             <p className="font-display text-3xl font-bold">

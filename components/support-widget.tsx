@@ -26,12 +26,12 @@ export function SupportWidget() {
   }
 
   return (
-    <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-3">
+    <div className="fixed bottom-[calc(4.5rem+env(safe-area-inset-bottom))] right-3 z-50 flex flex-col items-end gap-3 md:bottom-4 md:right-4">
       {open && (
         <div
           role="dialog"
           aria-label={t('support')}
-          className="flex h-96 w-[min(20rem,calc(100vw-2rem))] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-2xl"
+          className="flex h-[min(24rem,calc(100dvh-7rem))] max-h-[calc(100dvh-7rem)] w-[min(20rem,calc(100vw-1.5rem))] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-2xl md:h-96 md:max-h-[calc(100dvh-2rem)] md:w-80"
         >
           <div className="flex items-center justify-between bg-gold-gradient px-4 py-3 text-primary-foreground">
             <div>
@@ -77,9 +77,9 @@ export function SupportWidget() {
                 if (e.key === 'Enter' && (e.nativeEvent.isComposing || e.keyCode === 229)) e.preventDefault()
               }}
               placeholder="Type a message..."
-              className="h-10 flex-1 rounded-full border border-input bg-background px-4 text-sm focus:border-primary focus:outline-none"
+              className="h-10 min-w-0 flex-1 rounded-full border border-input bg-background px-4 text-sm focus:border-primary focus:outline-none"
             />
-            <button type="submit" aria-label="Send" className="flex size-10 items-center justify-center rounded-full bg-primary text-primary-foreground">
+            <button type="submit" aria-label="Send" className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground">
               <Send className="size-4" />
             </button>
           </form>
@@ -90,7 +90,7 @@ export function SupportWidget() {
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
         aria-label={t('support')}
-        className="relative flex size-14 items-center justify-center rounded-full bg-gold-gradient text-primary-foreground shadow-[0_0_30px_-4px] shadow-primary/70 transition hover:scale-105"
+        className="relative flex size-12 items-center justify-center rounded-full bg-gold-gradient text-primary-foreground shadow-[0_0_30px_-4px] shadow-primary/70 transition hover:scale-105 sm:size-14"
       >
         {open ? <X className="size-6" /> : <Headset className="size-6" />}
         {!open && <span className="absolute right-0.5 top-0.5 size-3 rounded-full border-2 border-background bg-success" aria-hidden />}
