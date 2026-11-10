@@ -23,7 +23,6 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
-  --color-foreground: var(--foreground);
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-success: var(--success);
@@ -75,9 +74,22 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    box-sizing: border-box;
   }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-sans;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
   }
 }
 
@@ -94,6 +106,8 @@
 
 @utility no-scrollbar {
   scrollbar-width: none;
+  -ms-overflow-style: none;
+
   &::-webkit-scrollbar {
     display: none;
   }

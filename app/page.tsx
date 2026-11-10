@@ -16,7 +16,7 @@ export default function Home() {
         <SiteHeader />
         <CategoryNav />
       </div>
-      <main className="mx-auto flex max-w-7xl flex-col gap-8 px-3 py-5 md:gap-10 md:px-6 md:py-6">
+      <main className="mx-auto flex w-full max-w-7xl flex-col gap-5 px-2 py-4 sm:gap-6 sm:px-4 md:gap-8 md:px-6 md:py-6">
         <HeroSlider />
         <WinnersTicker />
         <SportsTicker />

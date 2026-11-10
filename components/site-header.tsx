@@ -13,12 +13,12 @@ export function SiteHeader() {
 
   return (
     <header className="border-b border-border bg-surface/95 backdrop-blur">
-      <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-3 md:px-6">
-        <a href="#" className="flex shrink-0 items-center gap-2" aria-label="BajiPlay home">
-          <span className="flex size-9 items-center justify-center rounded-lg bg-gold-gradient font-display text-xl font-bold text-primary-foreground">
+      <div className="mx-auto flex min-h-16 max-w-7xl flex-wrap items-center gap-2 px-2 py-2 sm:gap-3 sm:px-4 md:px-6">
+        <a href="#" className="flex shrink-0 items-center gap-1.5 sm:gap-2" aria-label="BajiPlay home">
+          <span className="flex size-8 items-center justify-center rounded-lg bg-gold-gradient font-display text-lg font-bold text-primary-foreground sm:size-9 sm:text-xl">
             B
           </span>
-          <span className="font-display text-2xl font-bold tracking-tight">
+          <span className="font-display text-xl font-bold tracking-tight sm:text-2xl">
             <span className="text-foreground">Baji</span>
             <span className="text-gold-gradient">Play</span>
           </span>
@@ -26,7 +26,7 @@ export function SiteHeader() {
 
         <form
           role="search"
-          className="relative ml-4 hidden max-w-xs flex-1 lg:block"
+          className="order-3 relative w-full sm:order-3 lg:order-2 lg:ml-4 lg:block lg:max-w-xs lg:flex-1"
           onSubmit={(e) => e.preventDefault()}
         >
           <label htmlFor="game-search" className="sr-only">
@@ -41,8 +41,8 @@ export function SiteHeader() {
           />
         </form>
 
-        <div className="ml-auto flex items-center gap-2">
-          <div className="flex rounded-full border border-border bg-card p-0.5 text-xs font-semibold" role="group" aria-label="Language">
+        <div className="ml-auto flex items-center gap-1 sm:gap-2">
+          <div className="flex shrink-0 rounded-full border border-border bg-card p-0.5 text-[10px] font-semibold sm:text-xs" role="group" aria-label="Language">
             {(['bn', 'en'] as const).map((l) => (
               <button
                 key={l}
@@ -50,7 +50,7 @@ export function SiteHeader() {
                 onClick={() => setLang(l)}
                 aria-pressed={lang === l}
                 className={cn(
-                  'rounded-full px-2.5 py-1 uppercase transition-colors',
+                  'rounded-full px-2 py-1 uppercase transition-colors sm:px-2.5',
                   lang === l ? 'bg-primary text-primary-foreground' : 'text-muted-foreground hover:text-foreground',
                 )}
               >
@@ -80,7 +80,7 @@ export function SiteHeader() {
 
           <button
             type="button"
-            className="hidden items-center gap-1.5 rounded-full bg-success px-4 py-2 text-sm font-semibold text-primary-foreground transition hover:brightness-110 sm:flex"
+            className="hidden items-center gap-1.5 rounded-full bg-success px-3 py-2 text-xs font-semibold text-primary-foreground transition hover:brightness-110 sm:flex sm:text-sm"
           >
             <ArrowDownToLine className="size-4" aria-hidden />
             {t('deposit')}
@@ -95,14 +95,14 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setAuthMode('login')}
-            className="rounded-full border border-primary/60 px-4 py-2 text-sm font-semibold text-primary transition hover:bg-primary/10"
+            className="rounded-full border border-primary/60 px-2.5 py-2 text-xs font-semibold text-primary transition hover:bg-primary/10 sm:px-4 sm:text-sm"
           >
             {t('login')}
           </button>
           <button
             type="button"
             onClick={() => setAuthMode('register')}
-            className="rounded-full bg-gold-gradient px-4 py-2 text-sm font-bold text-primary-foreground shadow-[0_0_20px_-4px] shadow-primary/60 transition hover:brightness-110"
+            className="rounded-full bg-gold-gradient px-2.5 py-2 text-xs font-bold text-primary-foreground shadow-[0_0_20px_-4px] shadow-primary/60 transition hover:brightness-110 sm:px-4 sm:text-sm"
           >
             {t('register')}
           </button>
