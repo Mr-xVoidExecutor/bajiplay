@@ -20,9 +20,9 @@ export default function Home() {
         <HeroSlider />
         <WinnersTicker />
         <SportsTicker />
-        <GameSection id="live-casino" titleKey="liveCasino" icon={Tv} games={liveCasinoGames} variant="live" />
-        <GameSection id="slots" titleKey="slotGames" icon={Cherry} games={slotGames} variant="slot" />
-        <GameSection id="crash" titleKey="crashArcade" icon={Rocket} games={crashGames} variant="crash" />
+        <GameSection id="live-casino" titleKey="liveCasino" icon={<Tv className="size-5" />} games={liveCasinoGames} variant="live" />
+        <GameSection id="slots" titleKey="slotGames" icon={<Cherry className="size-5" />} games={slotGames} variant="slot" />
+        <GameSection id="crash" titleKey="crashArcade" icon={<Rocket className="size-5" />} games={crashGames} variant="crash" />
       </main>
       <SiteFooter />
       <SupportWidget />

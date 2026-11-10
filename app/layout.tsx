@@ -1,6 +1,6 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Inter, Rajdhani } from 'next/font/google'
+import { Hind_Siliguri, Inter, Rajdhani } from 'next/font/google'
 import { LanguageProvider } from '@/components/language-provider'
 import './globals.css'
 
@@ -9,6 +9,11 @@ const rajdhani = Rajdhani({
   subsets: ['latin'],
   weight: ['500', '600', '700'],
   variable: '--font-rajdhani',
+})
+const bengali = Hind_Siliguri({
+  subsets: ['bengali'],
+  weight: ['400', '600', '700'],
+  variable: '--font-bengali',
 })
 
 export const metadata: Metadata = {
@@ -37,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${rajdhani.variable}`}>
+    <html lang="en" className={`${inter.variable} ${rajdhani.variable} ${bengali.variable}`}>
       <body className="antialiased">
         <LanguageProvider>{children}</LanguageProvider>
         {process.env.NODE_ENV === 'production' && <Analytics />}

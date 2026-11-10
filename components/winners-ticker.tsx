@@ -14,8 +14,9 @@ export function WinnersTicker() {
         <Trophy className="size-4" aria-hidden />
         <span className="whitespace-nowrap font-display text-sm font-bold uppercase tracking-wide">{t('recentWins')}</span>
       </div>
-      <div className="relative flex-1 overflow-hidden py-2.5 [mask-image:linear-gradient(to_right,transparent,black_4%,black_96%,transparent)]">
-        <ul className="flex w-max animate-marquee gap-8 hover:[animation-play-state:paused]">
+      <div className="relative flex-1 overflow-hidden py-2.5">
+        <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-12 bg-gradient-to-l from-card to-transparent" aria-hidden />
+        <ul className="flex w-max animate-marquee gap-8 will-change-transform hover:[animation-play-state:paused]">
           {loop.map((w, i) => (
             <li key={i} aria-hidden={i >= recentWins.length} className="flex items-center gap-2 whitespace-nowrap text-sm">
               <span className="flex size-6 items-center justify-center rounded-full bg-secondary text-[10px] font-bold uppercase text-accent">

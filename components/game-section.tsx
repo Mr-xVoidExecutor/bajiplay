@@ -20,13 +20,13 @@ const badgeStyles: Record<NonNullable<Game['badge']>, string> = {
 export function GameSection({
   id,
   titleKey,
-  icon: Icon,
+  icon,
   games,
   variant,
 }: {
   id: string
   titleKey: TranslationKey
-  icon: React.ComponentType<{ className?: string }>
+  icon: React.ReactNode
   games: Game[]
   variant: Variant
 }) {
@@ -46,7 +46,7 @@ export function GameSection({
       <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
           <span className="flex size-9 items-center justify-center rounded-lg bg-primary/15 text-primary">
-            <Icon className="size-5" />
+            {icon}
           </span>
           <h2 id={`${id}-title`} className="font-display text-2xl font-bold">
             {t(titleKey)}
@@ -119,13 +119,13 @@ function GameCard({ game, variant, playLabel }: { game: Game; variant: Variant; 
         </div>
 
         {game.players !== undefined && (
-          <span className="absolute right-2 top-2 flex items-center gap-1 rounded-full bg-background/70 px-2 py-0.5 text-[10px] font-medium backdrop-blur">
+          <span className="absolute right-2 top-2 flex items-center gap-1 rounded-full bg-background/80 px-2 py-0.5 text-[10px] font-medium">
             <Users className="size-3 text-success" aria-hidden />
             {game.players.toLocaleString('en-US')}
           </span>
         )}
 
-        <div className="absolute inset-0 flex items-center justify-center bg-background/60 opacity-0 backdrop-blur-[2px] transition-opacity group-focus-within:opacity-100 group-hover:opacity-100">
+        <div className="absolute inset-0 flex items-center justify-center bg-background/70 opacity-0 transition-opacity group-focus-within:opacity-100 group-hover:opacity-100">
           <button
             type="button"
             className="flex items-center gap-1.5 rounded-full bg-gold-gradient px-5 py-2.5 text-sm font-bold text-primary-foreground shadow-lg"
